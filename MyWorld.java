@@ -16,7 +16,7 @@ public class MyWorld extends World
     public MyWorld()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
-        super(600, 400, 1); 
+        super(1000, 600, 1); 
         prepare();
     }
     
@@ -28,17 +28,14 @@ public class MyWorld extends World
     {
 
         Land land = new Land();
-        addObject(land,35,383);
-        Land land2 = new Land();
-        addObject(land2,110,382);
-        Land land3 = new Land();
-        addObject(land3,184,382);
-        Land land5 = new Land();
-        addObject(land5,133,316);
+        addObject(land,500,577);
         Plankton plankton = new Plankton();
-        addObject(plankton,25,339);
-        land5.setLocation(107,322);
+        addObject(plankton,61,469);
+        Jellyfish jellyfish = new Jellyfish();
+        addObject(jellyfish,521,349);
         ChumStick chumStick = new ChumStick();
-        addObject(chumStick,136,265);
+        addObject(chumStick,417,351);
+        chumStick.setLocation(492,349);
+        jellyfish.setLocation(508,414);
     }
 }

@@ -49,7 +49,7 @@ public class Plankton extends Actor
             move(-4);
         }
         
-        if(Greenfoot.isKeyDown("up")&&(onGround()==true)){
+        if(Greenfoot.isKeyDown("up")&&((onGround()==true)||(onJellyfish()==true))){
             verticalSpeed = jumpHeight;
             fall();
         }
@@ -62,8 +62,16 @@ public class Plankton extends Actor
         return under != null;
     }
     
+    boolean onJellyfish(){ 
+        Actor under = getOneObjectAtOffset(0,getImage().getHeight()/2, Jellyfish.class);
+        return under != null;
+    }
+    
     public void checkFalling(){
         if(onGround() == false){
+            fall();
+        }
+        if(onJellyfish() == false) {
             fall();
         }
         
